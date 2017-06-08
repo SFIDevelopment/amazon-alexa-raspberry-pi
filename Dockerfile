@@ -18,7 +18,6 @@ RUN git clone --depth=1 https://github.com/alexa-pi/AlexaPi.git && \
 WORKDIR AlexaPi
 
 COPY "$SOURCEFOLDER/asound.conf" /etc/asound.conf
-RUN /etc/init.d/alsa-utils restart
 COPY credentials.py ./src
 CMD python src/credentials.py && python src/main.py
 
